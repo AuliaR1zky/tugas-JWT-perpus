@@ -10,7 +10,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable implements JWTSubject
 {
     protected $table = 'petugas';
-
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +18,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'nama_petugas', 'alamat', 'telp', 'username', 'password', 'level',
+        'nama_petugas', 'alamat', 'telp', 'username', 'password', 'level'
     ];
 
     /**

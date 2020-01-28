@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Anggota_model extends Model
 {
     protected $table="anggota";
-    protected $tableprimary="id";
-    public $timestamps=false;
+    protected $primaryKey="id";
+
+    public $fillable = [
+            'nama_anggota', 'alamat', 'telp'
+        ];
+    
 }
