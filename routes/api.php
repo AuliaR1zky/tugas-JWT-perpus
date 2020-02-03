@@ -32,6 +32,18 @@ Route::put('/ubah_anggota/{id}','AnggotaController@update');
 Route::delete('/hapus_anggota/{id}','AnggotaController@hapus');
 Route::get('/tampil_anggota','AnggotaController@tampil');
 
+//Peminjaman
+Route::post('/simpan_peminjaman','PeminjamanController@store');
+Route::put('/ubah_peminjaman/{id}','PeminjamanController@update');
+Route::delete('/hapus_peminjaman/{id}','PeminjamanController@destroy');
+Route::get('/tampil_peminjaman','PeminjamanController@tampil_pinjam');
+Route::get('/peminjaman','PeminjamanController@index');
+
+//DetailPeminjaman
+Route::post('/simpan_detail','PeminjamanController@simpan');
+Route::put('/ubah_detail/{id}','PeminjamanController@ubah');
+Route::delete('/hapus_detail/{id}','PeminjamanController@hapus');
+
 Route::get('/', function(){
     return Auth::user()->level;
 })->middleware('jwt.verify');
